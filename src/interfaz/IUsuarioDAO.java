@@ -11,7 +11,10 @@ public interface IUsuarioDAO {
 
 	public boolean adiconar(Usuario usuario);
 
-	public boolean editar(Usuario usuario);
+	public void editar(Usuario usuario);
 
-	public boolean eliminar(Usuario usuario);
+	public void eliminar(String usuario);
+	
+	public List consultarUsuario(String usuario);
+	
 }

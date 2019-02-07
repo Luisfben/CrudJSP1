@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConexionBD {
 	private static ConexionBD conexionBd = null;
 	private Connection con = null;
-
+	
 	public static Connection getConnection() {
 		if (conexionBd == null) {
 			conexionBd = new ConexionBD();
@@ -17,8 +17,8 @@ public class ConexionBD {
 	}
 
 	private ConexionBD() {
-		String connectionUrl = "jdbc:sqlserver://192.168.99.100:32771;databaseName=test;user=sa;password=Gordis2019";
-		Connection con = null;
+		String connectionUrl = "jdbc:sqlserver://192.168.99.100:32772;databaseName=test;user=sa;password=Gordis2019";
+		
 		try {
 			con = DriverManager.getConnection(connectionUrl);
 		} catch (SQLException e) {

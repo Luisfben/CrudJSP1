@@ -13,24 +13,36 @@
 </head>
 <body>
 	<div>
-		<table>
+		<table border="1">
 			<thead>
 				<tr>
 					<th>perfil</th>
+					<th>usuario</th>
+					<th>nombre</th>
+					<th>apellido</th>
+					<th>acciones</th>
 				</tr>
 			</thead>
 			<% 
 				UsuarioDAO dao = new UsuarioDAO();
-				List<Usuario> list=dao.listar();
+				List<Usuario> list = dao.listar();
 				Iterator<Usuario> iter=list.iterator();
 				Usuario usu=null;
-				while(iter.hasNext())
+				while(iter.hasNext()){
 					usu=iter.next();
 			%>
 			<tbody>
 				<tr>
 					<td><%=usu.getPerfil() %></td>
+					<td><%=usu.getUsuario() %></td>
+					<td><%=usu.getNombre() %></td>
+					<td><%=usu.getApellido() %></td>
+					<td>
+						<a href="ControladorUsuario?accion=editar&usuario=<%=usu.getUsuario() %>">editar</a>
+						<a href="ControladorUsuario?accion=eliminar&usuario=<%=usu.getUsuario() %>">eliminar</a>
+					</td>
 				</tr>
+				<%}%>
 			</body>
 		</table>
 	</div>
